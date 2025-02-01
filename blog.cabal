@@ -1,5 +1,5 @@
 cabal-version:       3.4
-name:                ant
+name:                blog
 version:             0.1.0.0
 -- synopsis:         A simple game (optional, fill if needed)
 -- description:      (optional, fill if needed)
@@ -39,19 +39,19 @@ library
     hs-source-dirs:   src
     default-language: GHC2024
 
-executable ant
+executable blog
     import:           shared-deps
     main-is:          Main.hs
     -- other-modules:
     -- other-extensions:
-    build-depends:    ant
+    build-depends:    blog
     hs-source-dirs:   app
     default-language: GHC2024
 
-test-suite ant-test
+test-suite blog-test
     import:           shared-deps
     type:             exitcode-stdio-1.0
     hs-source-dirs:   test
     main-is:          Main.hs
-    build-depends:    ant
+    build-depends:    blog
     default-language: GHC2024
