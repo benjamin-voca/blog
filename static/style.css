@@ -1,0 +1,51 @@
+@import './svg.css';
+:root {
+  color-scheme: light dark;
+  --bgc: light-dark(#1e1e1e,#1e1e1e);
+  --hs-left: #E63946; /* Vibrant Red */
+  --hs-lambda: #1D3557; /* Deep Blue */
+  --hs-equals: #457B9D; /* Cool Blue */
+
+  /* Complementary Colors */
+  --hs-left-light: #FF8A8A; /* Light Red */
+  --hs-lambda-dark: #0E1A2E; /* Dark Blue */
+  --hs-equals-muted: #7393B3; /* Muted Blue */
+}
+.hidden { display:none!important;   transition: opacity 0.5s ease;}
+
+body {
+  background-color: var(--bgc);
+  padding: 0 10vw;
+}
+header {
+  margin: 10vh 0 10vh 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height:80vh;
+}
+
+header > summary {
+  background-color:var(--light-bg);
+  border-radius: 3rem;
+  width:100%;
+  height:100%;
+  display:block;
+}
+header > img {
+  width:100%;
+  height:100%;
+}
+
+#svg-container{
+  position: relative;
+  overflow: hidden;
+}
+
+/* Each svg-slide is absolutely positioned so they overlap */
+.svg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
