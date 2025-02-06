@@ -14,11 +14,12 @@ data Block
                                          --   indented vs. fenced (with an optional info string).
   | List ListType [ListItem]             -- ^ An ordered or bullet list.
   | HTMLBlock Text                       -- ^ A block of raw HTML.
-  | LinkReferenceDefinition Text Text (Maybe Text)
+  | LRD LinkReferenceDefinition
                                          -- ^ A link reference definition:
                                          --   label, destination, and optional title.
   deriving (Show, Eq)
 
+data LinkReferenceDefinition = LinkReferenceDefinition {lab:: Text,  dest:: Text , title:: Maybe Text} deriving (Show, Eq)
 -- | Distinguishes indented code blocks from fenced ones.
 data CodeBlockType
   = Indented                           -- ^ An indented code block.
