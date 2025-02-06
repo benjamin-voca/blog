@@ -45,8 +45,8 @@ common shared-deps
 
 library
     import:           shared-deps
-    exposed-modules:  MyLib
-    -- other-modules:    -- Add here if you define additional internal modules
+    exposed-modules:  MarkdownParser
+    other-modules: MarkdownTypes
     -- other-extensions:
     hs-source-dirs:   src
 

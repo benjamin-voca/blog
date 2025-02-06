@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             // Cycle through the slides every 3 seconds
-            setInterval(switchSlide, (4000 + (slides.length * 3000)));
+            setInterval(switchSlide, (5000 + (slides.length * 3000)));
         })
         .catch(err => {
             console.error('Error loading SVGs:', err);

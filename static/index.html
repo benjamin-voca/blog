@@ -13,11 +13,24 @@
       </summary>
     </header>
     <main>
+      <ul id="blog-list">
+        <li><button data-blog="1">Blog Post 1</button></li>
+        <li><button data-blog="2">Blog Post 2</button></li>
+      </ul>
+      <!-- Modal for Blog Post -->
+      <dialog id="blog-modal">
+        <article>
+          <button id="close-modal">Close</button>
+          <h2 id="blog-title"></h2>
+          <p id="blog-content"></p>
+        </article>
+      </dialog>
     </main>
     <script type="module">
       import motion from "https://cdn.jsdelivr.net/npm/motion@12.0.11/+esm"
     </script>
     <script type="module" src="./svg.js"></script>
     <script type="module" src="./index.js"></script>
+    <script type="module" src="./modal.js"></script>
   </body>
 </html>
