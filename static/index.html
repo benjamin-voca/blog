@@ -8,29 +8,73 @@
   <body>
     <header>
       <div id="svg-container"></div>
-      <summary>
-        PlaceHolder
-      </summary>
+      <article class="mini-article" data-article-name="Resume" onClick="openArticle(event)">
+        <section>
+          <h2>John Doe – Resume</h2>
+          <summary>
+            <p><strong>Email:</strong>
+              john.doe@example.com</p>
+            <p><strong>Phone:</strong>
+              (555) 123-4567</p>
+            <p><strong>Profile:</strong>
+              Passionate software developer with 5+ years of full‑stack experience. lorem ipsum dolor sit amet lorem lorem lorem</p>
+            <p><strong>Skills:</strong>
+              JavaScript, HTML, CSS, Node.js, React</p>
+            <p><strong>Experience:</strong>
+              3 years at Company A, 2 years at Company B</p>
+            <p><strong>Education:</strong>
+              B.Sc. in Computer Science</p>
+          </summary>
+        </section>
+      </article>
     </header>
     <main>
-      <ul id="blog-list">
-        <li><button data-blog="1">Blog Post 1</button></li>
-        <li><button data-blog="2">Blog Post 2</button></li>
-      </ul>
-      <!-- Modal for Blog Post -->
-      <dialog id="blog-modal">
-        <article>
-          <button id="close-modal">Close</button>
-          <h2 id="blog-title"></h2>
-          <p id="blog-content"></p>
-        </article>
-      </dialog>
+      <!-- The data-article-name attribute corresponds to the filename in /blog (e.g., Title.html) -->
+      <article class="mini-article" data-article-name="Title" onClick="openArticle(event)">
+        <img src="https://discourse.haskell.org/uploads/default/original/2X/5/5ffe259bfabc0693b03e271836b32c447603a6c9.png">
+        <section>
+          <h2>Title</h2>
+          <p>Summary</p>
+        </section>
+      </article>
+      <!-- Repeated mini-articles -->
+      <article class="mini-article" data-article-name="Title" onClick="openArticle(event)">
+        <img src="https://discourse.haskell.org/uploads/default/original/2X/5/5ffe259bfabc0693b03e271836b32c447603a6c9.png">
+        <section>
+          <h2>Title</h2>
+          <p>Summary</p>
+        </section>
+      </article>
+      <article class="mini-article" data-article-name="Title" onClick="openArticle(event)">
+        <img src="https://discourse.haskell.org/uploads/default/original/2X/5/5ffe259bfabc0693b03e271836b32c447603a6c9.png">
+        <section>
+          <h2>Title</h2>
+          <p>Summary</p>
+        </section>
+      </article>
+      <article class="mini-article" data-article-name="Title" onClick="openArticle(event)">
+        <img src="https://discourse.haskell.org/uploads/default/original/2X/5/5ffe259bfabc0693b03e271836b32c447603a6c9.png">
+        <section>
+          <h2>Title</h2>
+          <p>Summary</p>
+        </section>
+      </article>
+      <article class="mini-article" data-article-name="Title" onClick="openArticle(event)">
+        <img src="https://discourse.haskell.org/uploads/default/original/2X/5/5ffe259bfabc0693b03e271836b32c447603a6c9.png">
+        <section>
+          <h2>Title</h2>
+          <p>Summary</p>
+        </section>
+      </article>
+      <article class="mini-article" data-article-name="Title" onClick="openArticle(event)">
+        <img src="https://discourse.haskell.org/uploads/default/original/2X/5/5ffe259bfabc0693b03e271836b32c447603a6c9.png">
+        <section>
+          <h2>Title</h2>
+          <p>Summary</p>
+        </section>
+      </article>
     </main>
-    <script type="module">
-      import motion from "https://cdn.jsdelivr.net/npm/motion@12.0.11/+esm"
-    </script>
     <script type="module" src="./svg.js"></script>
     <script type="module" src="./index.js"></script>
-    <script type="module" src="./modal.js"></script>
   </body>
 </html>

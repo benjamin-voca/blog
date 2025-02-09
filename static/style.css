@@ -1,5 +1,6 @@
 @import './reset.css';
 @import './svg.css';
+@import './articles.css';
 :root {
   color-scheme: light dark;
   --bgc: light-dark(#1e1e1e,#1e1e1e);

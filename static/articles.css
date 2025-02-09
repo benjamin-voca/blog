@@ -1,0 +1,78 @@
+.mini-article[data-article-name="Resume"] {
+  grid-template-columns: 1fr;
+}
+
+/* Layout for main */
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 3rem;
+}
+/* Default mini-article styles */
+.mini-article {
+  padding: 5rem;
+  border-radius: 3rem;
+  background-color: #07020c;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 2rem;
+  position: relative;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  overflow: hidden;
+  transform: scale(0.8); /* start scaled down */
+}
+/* When in view, scale up to 1 */
+.mini-article.in-view {
+  transform: scale(1);
+}
+/* Expanded state: the mini-article fills the screen */
+.mini-article.expanded {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem;
+  border-radius: 0;
+  z-index: 1000;
+  background-color: #fff;
+  color: #000;
+  grid-template-columns: 1fr;
+  transform: none; /* override scaling */
+}
+.mini-article img {
+  max-width: 100%;
+  height: auto;
+  margin: auto 0;
+}
+/* Hide the summary paragraph when expanded */
+.mini-article.expanded section p {
+  display: none;
+}
+/* Container for the loaded article content */
+.expanded-content {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.5s cubic-bezier(.1, .85, .78, .68);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+}
+/* Animate in the content when expanded */
+.mini-article.expanded .expanded-content {
+  opacity: 1;
+  transform: scale(1);
+}
+/* Close button styles */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1010;
+  padding: 0.5rem 1rem;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+}
