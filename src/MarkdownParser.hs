@@ -18,7 +18,7 @@ parseDocument = Document <$> M.many parseBlock
   where
     -- A simplified block parser that covers headings, paragraphs, lists, etc.
     parseBlock :: Parser Block
-    parseBlock = try parseHeading
+    parseBlock =  try parseHeading
               <|> try parseList
               <|> try parseThematicBreak
               <|> try parseBlockQuote
@@ -40,7 +40,7 @@ parseDocument = Document <$> M.many parseBlock
 
     parseThematicBreak :: Parser Block
     parseThematicBreak =
-      ThematicBreak <$ (char '\n' *> choice [string "***", string "---", string "___", string "* * *"] <* char '\n')
+      ThematicBreak <$ (char '\n' *> choice (map (string)["***", "---", "___", "* * *"]) <* char '\n')
 
     -- Revised parseBlockQuote: collect one or more lines that start with '>'
     parseBlockQuote :: Parser Block

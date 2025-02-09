@@ -3,11 +3,11 @@ module Main (main) where
 import Test.Hspec hiding (example)
 import Data.Aeson (eitherDecode, FromJSON (parseJSON))
 import qualified Data.ByteString.Lazy as B
-import Data.Text (Text, unpack)
+import Data.Text (unpack)
 import MarkdownParser (parseMarkdown) -- Adjust the import to your parser's module
-import Text.Megaparsec (parse)
-import Data.Aeson.Types (FromJSON, (.:))
+import Data.Aeson.Types ((.:))
 import Data.Aeson (withObject)
+import HtmlRender (renderHtml)
 
 -- Define a data type to match the structure of the CommonMark test cases
 data TestCase = TestCase
@@ -32,9 +32,9 @@ main = hspec $ do
         Left err -> expectationFailure $ "Failed to parse test data: " ++ err
         Right testCases -> mapM_ runTest (testCases :: [TestCase])
 
+
 runTest :: TestCase -> Expectation
-runTest TestCase{..} =
-label $ between (char '`') (char '`') (M.some parseInline)
-sati
-() is
-))
+runTest (TestCase _ markdown expectedHtml) =
+  case parseMarkdown markdown of
+    Left err -> expectationFailure $ "Parsing failed: " ++ show err
+    Right parsed -> show (renderHtml parsed) `shouldBe` unpack expectedHtml
